@@ -240,6 +240,30 @@ tf.swing_2 = mp.swing*2*-1;
 
 [endmacro]
 
+;翻訳
+[macro name="tb_lang_set"]
+
+[lang_set name="&mp.name"]
+
+;プレビュー中の場合、本当のシナリオ名を適応できるようにしたい。
+[iscript]
+	console.log(f._system_preview_ks);
+	if(f._system_preview_ks){
+		if(TYRANO.kag.map_lang["scenes"]){
+			if(TYRANO.kag.map_lang["scenes"][f._system_preview_ks]){
+				TYRANO.kag.map_lang["scenes"]["_preview.ks"]=TYRANO.kag.map_lang["scenes"][f._system_preview_ks];
+			}
+		}
+	}
+[endscript]
+
+
+[endmacro]
+
+
+
+
+
 
 
 
